@@ -1,0 +1,23 @@
+<div class="flex-container">
+  <h1>Prachtig opgemaakte order pagina</h1>
+
+  <div>
+    <button (click)="deleteOVOrders()">Delete ov orders</button>
+    <button (click)="deleteKVOrders()">Delete kv orders</button>
+    <button (click)="restoreDefaultOrders()">Restore default orders</button>
+  </div>
+  <p>Geselecteerde order:</p>
+  <p>{{ selectedOrderStr() }}</p>
+
+  <p>
+    <b
+      >Alle orders ({{ orderStore.orderCount() }}, kv: {{ orderStore.kvOrderCount() }}, ov:
+      {{ orderStore.ovOrderCount() }}):</b
+    >
+  </p>
+  @for (order of orderStore.orders(); track order.id) {
+    <div class="order-item">
+      <p>Order ID: {{ order.id }}, Type: {{ order.type }}</p>
+    </div>
+  }
+</div>
