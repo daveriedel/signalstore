@@ -1,0 +1,10 @@
+<div class="flex-container">
+  <h1>Prachtig opgemaakte home pagina</h1>
+  <p>{{ countStore.count() }}</p>
+  <button (click)="countStore.addCount()">Add inspiring number</button>
+  <button (click)="startAddInterval()">Start interval</button>
+  <button (click)="setRandomNumber()">Set random number</button>
+  <div>
+    <a [routerLink]="'/store'">Go to Store Page</a>
+  </div>
+</div>
